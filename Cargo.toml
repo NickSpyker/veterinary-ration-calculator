@@ -22,9 +22,19 @@ rust-version = "1.90.0"
 
 [workspace]
 resolver = "3"
-members = ["src/core/veterinary_ration_data", "src/api/google_drive"]
+members = ["src/core", "src/gui", "src/app"]
 
 [profile.dev.package."*"]
 opt-level = 2
 
 [workspace.dependencies]
+# workspace
+core = { path = "src/core" }
+gui = { path = "src/gui" }
+app = { path = "src/app" }
+# global
+serde = { version = "1.0.228", features = ["derive"] }
+# core
+# gui
+iced = { version = "0.14.0", features = [] }
+# app
